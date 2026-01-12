@@ -1,0 +1,84 @@
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Page container */
+.container {
+  padding: 24px;
+}
+
+/* Button */
+.button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #e5e7eb;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #d1d5db;
+}
+
+tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Congestion colors */
+.high {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.medium {
+  color: #d97706;
+  font-weight: bold;
+}
+
+.low {
+  color: #16a34a;
+  font-weight: bold;
+}

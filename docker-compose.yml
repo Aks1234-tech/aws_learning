@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: urbanflow-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: urbanflow
+      MYSQL_USER: urban
+      MYSQL_PASSWORD: urban123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: Docker/backend.Dockerfile
+    container_name: urbanflow-backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: urbanflow
+      DB_USER: urban
+      DB_PASSWORD: urban123
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Docker/frontend.Dockerfile
+    container_name: urbanflow-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  mysql_data:
